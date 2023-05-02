@@ -1,0 +1,43 @@
+﻿<Window x:Class="XmlWpfTest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:XmlWpfTest"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="300" />
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        
+        <!-- row 1 -->
+        <TextBlock Text="Exndpoit:" Grid.Column="1" Grid.Row="1" />
+        <TextBox x:Name="EndpointTextBox" Text="" Grid.Column="2" Grid.Row="1" />
+        <Button x:Name="GetEndpointButton" Content="Get xml"
+                Grid.Column="3" Grid.Row="1"
+                Width="50" Height="30"
+                VerticalAlignment="Top" HorizontalAlignment="Right"
+                Click="GetEndpointButton_Click"/>
+
+        <!-- row 2 -->
+        <TextBlock Text="Nodo:" Grid.Column="1" Grid.Row="2" />
+        <TextBox x:Name="NodeTextBox" Text="" Grid.Column="2" Grid.Row="2" />
+
+        <!-- row 3 -->
+        <TreeView Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" >
+            <TreeViewItem x:Name="RootTreeViewItem" />
+        </TreeView>
+    </Grid>
+</Window>
